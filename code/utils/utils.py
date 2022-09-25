@@ -194,11 +194,12 @@ def compute_label_aggregations(df, folder, ctype):
 
         def aggregate_diagnostic(y_dic):
             tmp = []
-            for key in y_dic.keys():
+            for key, lik in y_dic.items():
                 if key in diag_agg_df.index:
-                    c = diag_agg_df.loc[key].diagnostic_class
-                    if str(c) != 'nan':
-                        tmp.append(c)
+                    if lik > .05:
+                        c = diag_agg_df.loc[key].diagnostic_class
+                        if str(c) != 'nan':
+                            tmp.append(c)
             return list(set(tmp))
 
         diag_agg_df = aggregation_df[aggregation_df.diagnostic == 1.0]
