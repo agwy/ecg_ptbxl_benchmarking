@@ -114,7 +114,7 @@ def apply_thresholds(preds, thresholds):
 # DATA PROCESSING STUFF
 
 def load_dataset(path, sampling_rate, release=False):
-    if path.split('/')[-2] == 'ptbxl':
+    if 'ptbxl' in path:
         # load and convert annotation data
         Y = pd.read_csv(path+'ptbxl_database.csv', index_col='ecg_id')
         Y.scp_codes = Y.scp_codes.apply(lambda x: ast.literal_eval(x))
@@ -122,7 +122,7 @@ def load_dataset(path, sampling_rate, release=False):
         # Load raw signal data
         X = load_raw_data_ptbxl(Y, sampling_rate, path)
 
-    elif path.split('/')[-2] == 'ICBEB':
+    elif 'ICBEB' in path:
         # load and convert annotation data
         Y = pd.read_csv(path+'icbeb_database.csv', index_col='ecg_id')
         Y.scp_codes = Y.scp_codes.apply(lambda x: ast.literal_eval(x))

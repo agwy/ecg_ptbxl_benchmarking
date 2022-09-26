@@ -79,7 +79,7 @@ conf_fastai_xresnet1d50_deeper = {'modelname':'fastai_xresnet1d50_deeper', 'mode
     'parameters':dict()}
 
 conf_fastai_inception1d = {'modelname':'fastai_inception1d', 'modeltype':'fastai_model', 
-    'parameters':dict()}
+    'parameters':dict(epochs = 20)}
 
 conf_fastai_inception1d_input256 = {'modelname':'fastai_inception1d_input256', 'modeltype':'fastai_model', 
     'parameters':dict(input_size=256)}
@@ -113,13 +113,13 @@ conf_fastai_basic1d = {'modelname':'fastai_basic1d', 'modeltype':'fastai_model',
     'parameters':dict()}
 
 conf_fastai_lstm = {'modelname':'fastai_lstm', 'modeltype':'fastai_model', 
-    'parameters':dict(lr=1e-3)}
+    'parameters':dict(lr=1e-3, epochs = 20)}
 
 conf_fastai_gru = {'modelname':'fastai_gru', 'modeltype':'fastai_model', 
     'parameters':dict(lr=1e-3)}
 
 conf_fastai_lstm_bidir = {'modelname':'fastai_lstm_bidir', 'modeltype':'fastai_model', 
-    'parameters':dict(lr=1e-3)}
+    'parameters':dict(lr=1e-3, epochs = 20)}
 
 conf_fastai_gru_bidir = {'modelname':'fastai_gru', 'modeltype':'fastai_model', 
     'parameters':dict(lr=1e-3)}
